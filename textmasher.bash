@@ -1,5 +1,6 @@
 #! /bin/bash
 # textmasher.bash - A program which initially takes 1 argument then repeats endlessly until the user enters a * somewhere within their string input
+# author - Matthew Austwick, designed for Task 3 of the 1st Assignment of Studio1
 
 if [ $# -lt 1 ] #This if statement merely checks to see if the user hasn't entered anything
 then
