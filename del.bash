@@ -1,6 +1,6 @@
 #! /bin/bash
 # del.bash - A command which copies files to a hidden .waste directory ready for future use
-
+#author - Matthew Austwick, 2018
 if [ $# -lt 1 ]
 then
 	echo "Please try again; this command takes 1 argument and you entered none"

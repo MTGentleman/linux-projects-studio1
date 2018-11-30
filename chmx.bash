@@ -1,7 +1,9 @@
 #! /bin/bash
 #chmx - A command that takes filenames as its arguments and and makes those files executable to every user
+#author - Matthew Austwick, 2018
 
 if [ $# -lt 1 ]
+#Like all of my programs, this line of code makes sure that they user has entered the correct amount of arguments
 then
 	echo "Sorry, there has been an error; please enter at least one argument which is a filename in your current directory"
 	exit

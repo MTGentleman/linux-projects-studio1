@@ -4,3 +4,6 @@
 
 echo Here are your files and their sizes in bytes
 ls -l ~/.waste/ | awk '{print $5, $9}'
+#The line above gets a long list of all the files with the details about the file
+#It then pipes it into the "awk" command which is used to splice off the unnecessary sections so it
+#only displays the columns which display the file name and the size ijnn bytes

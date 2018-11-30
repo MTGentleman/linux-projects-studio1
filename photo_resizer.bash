@@ -29,19 +29,9 @@ then
 		dir=$(ls $1)
 		for files in $dir
 		do
-			if [ -e "$1/$files.png" ] || [ -e "$1/$files.jpg" ]
-			then
-				dim=$(identity -format '%wx%h' $1/$files)
-				echo "The current dimensions of $file are $dim"
-				convert $1/$files -resize $2x$3 $1/$files
-				new_dim=$(identity -format '$wx$h' $1/$files)
-				echo "Your file has been resized to $files"
-			else
-				echo "Error, that file is not an image, the program will ignore it"
-				continue
-			fi
+			convert $1/$files -resize $2x$3 $1/$files
 		done
 	else
-		echo "Error, the directory is empty"
+		echo Error, the directory is empty
 	fi
 fi
