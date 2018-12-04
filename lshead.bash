@@ -2,7 +2,7 @@
 # lshead.bash - A program which reads the first X lines or the last X lines of all files in a given directory
 #author - Matthew Austwick, 2018
 
-if [ $# -lt 3 ]
+if [ $# -lt 3 ] #This checks the number of arguments the user has entered
 then
 	echo "Error. Usage of the command is [lshead.bash <head/tail> <#no of lines> <directory>"
 	exit
@@ -28,9 +28,8 @@ then
 		#If the user inputted "head" into one of their arguments
 		then
 			file_content=$($1 -$2 $3/$file)
-		elif [ $1 == "tail" ]
+		elif [ $1 == "tail" ] #If they have entered "tail" into their first argument
 		then
-		#If the user inputted "tail" into one of their arguments
 			file_content=$($1 -$2 $3/$file)
 		else
 			echo "Your arguments are invalid, please try again"

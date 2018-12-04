@@ -9,10 +9,12 @@ then
 	exit
 fi
 for var in $@
+#This repeats as many times as there are files in the directory, and for each program
 do
 	if [ -w $var ]
+	#This checks if there are write permissions
 	then 
-		chmod +x $var
+		chmod +x $var #This adds the execute permissions to the program
 		echo "The command $var is now executable, thank you"
 		echo " "
 	else

@@ -11,7 +11,7 @@ fi
 if [ -d $1 ]
 #The line above tests if the directory in the user's first argument actually exists
 then
-	validation=$(ls $1 | wc -w)
+	validation=$(ls $1 | wc -w) #This counts the number of "words" (files/directories) that there are in the given directory.
 	if (( $validation >= 1 ))
 	#This line above tests if the user's first target directory actually contains any files (this is to make sure there are no "file does not exist" errors later in the code. If there are files, the program continues as normal, if there are not, then the program displays a message and exits.
 	then

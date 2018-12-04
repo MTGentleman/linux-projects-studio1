@@ -24,7 +24,7 @@ do
 	fi	
 	echo "$input" >> $file #This line just means that the command will append the user's input to the file no matter what happens.
 done
-#The lines below just take the text_mash.txt file and search for the number of digits, alpha (letters) characters and punctuation marks
+#The lines below just take the text_mash.txt file and search for the number of digits, alpha (letters) characters and the different types of punctuation.
 #It stores it in a variable which has an appropriate name then displays it out to the user
 numberOfDigits=$(grep -o '[[:digit:]]' $file | wc -l)
 echo "The total number of entered digits is: "$numberOfDigits

@@ -3,7 +3,7 @@
 #and moves them into a specified directory and renames them all in a given format and with the numbers 1,2,3 etc. after them
 #author - Matthew Austwick, 2018
 
-if [ $# -lt 2 ]
+if [ $# -ne 2 ] #This checks to make sure that the user has entered 2 arguments into the command
 then
 	echo "This program needs 2 arguemnts in the following format [mass_copier.bash <target directory> <desired name format>]"
 	echo "Example usage would be [mass_copier.bash ~/testfiles File"
