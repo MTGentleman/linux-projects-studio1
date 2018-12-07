@@ -34,7 +34,8 @@ for files in $dirList #This repeats the below section code as many times as ther
 do
 	if [ -d $1/$files ] #If the located file is a directory, then it is not used and the program ignores it
 	then
-		echo "This is a sub-directory; it cannot be proceseed, the program will ignore it"
+		echo "This is a sub-directory; all files within shall also be moved but the directory stays where it is"
+		mv $1/$files/* $2
 	elif [ -e $1/$files ] #This makes sure that the remaining file actually exists and is valid; if it is, then it gets moved to the 2nd specified directory.
 	then
 		mv $1/$files $2

@@ -11,22 +11,36 @@ then
 	echo "Directories will be ignored"
 	exit
 fi
-files=$(ls $1)
+if [ -d $1 ]
+then
+	files=$(ls $1)
+else
+	echo "That directory does not exist. Please try again"
+	exit
+fi
 #This assigns the results of the ls command of the directory into the files variable
 count=1000
+content=$(ls $1 | wc -w)
+if [ $content = 0 ]
+then
+	echo "Your directory is empty; the program cannot continue"
+	exit
+fi
 echo "Your files to be changed are"
-ls $1
+echo $files
 for file in $files
 do
-	if [ -d $file ]
+	if [ -d $1/$file ]
 	#If the chosen file is a directory, the program does nothing and just continues
 	then
+		echo "The command has found a directory $file and will ignore it"
 		continue
 	fi
 		count=`expr $count + 1`
 		mv $1/$file $1/$2_${count:1}
 		#This formats the text to have the first character if the count variable cut off
 		#This is so that the numbers appear as 001, 002 etc.
+
 done
 echo "Your files are now listed as"
 echo " "
