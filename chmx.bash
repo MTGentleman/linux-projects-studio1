@@ -18,7 +18,7 @@ do
 		echo "The command $var is now executable, thank you"
 		echo " "
 	else
-		echo "Sorry, that file either does not exist or you do not have write permissions to that file. Please try again with a different file"
+		echo "Sorry, that file called $var either does not exist or you do not have write permissions to that file. Please try again with a different file"
 		exit
 	fi
 done

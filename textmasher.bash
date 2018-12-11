@@ -17,10 +17,16 @@ while true;
 do
 	echo "Please enter more characters to be compared"
 	read input
+	curnum=$(echo $input | grep -o "[[:digit:]]" | wc -l)
+	currentalpha=$(echo $input | grep -o "[[:alpha:]]" | wc -l)
+	curpunct=$(echo $input | grep -o "[[:punct:]]" | wc -l)
 	if [[ $input == *"*"* ]]; then
 		text="$text$input" #This, similar to the line below, appends to the textmash_results.txt; however, for this line it also includes the terminating * character and what they entered before it. 
+		echo "You had $curnum digits in your last entered string"
+		echo "You have $currentalpha letters in your last entered string"
+		echo "You had $curpunct non alpha-numeric characters in your last entered string"
 		break
-	fi	
+	fi
 	text="$text$input" #This line just means that the command will append the user's input to the variable created at the start of the program.
 done
 #The lines below just take the text_mash.txt file and search for the number of digits, alpha (letters) characters and the different types of punctuation.
