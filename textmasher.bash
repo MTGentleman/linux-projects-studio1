@@ -25,6 +25,7 @@ do
 	curnum=$(echo "$input" | grep -o "[[:digit:]]" | wc -l)
 	currentalpha=$(echo "$input" | grep -o "[[:alpha:]]" | wc -l)
 	curpunct=$(echo "$input" | grep -o "[[:punct:]]" | wc -l)
+	#These lines just calculate the last entered number of letters, numbers and symbols in the string the user JUST entered
 	if [[ "$input" == *"*"* ]]; then
 		text="$text$input" #This, similar to the line below, appends to the textmash_results.txt; however, for this line it also includes the terminating * character and what they entered before it. 
 		echo "You had $curnum digits in your last entered string"

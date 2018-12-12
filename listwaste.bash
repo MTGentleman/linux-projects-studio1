@@ -2,8 +2,7 @@
 # listwaste - A command which is used to display the names of the files inside of the
 # .waste directory and lists their size in bites
 
-dir="~/.waste"
-if [ -d $dir ]
+if [ -d ~/.waste ]
 then
 	echo " "
 else
