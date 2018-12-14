@@ -19,7 +19,8 @@ echo "You first value to check is $1"
 echo "If any (digits, numbers or otherwise) have been entered, this program will count how many of each there are!"
 echo "If you enter (or have entered) a '*' anywhere within the string, the program will terminate and display the aforementioned output"
 
-while [ $test -eq 1 ] 
+while [ $test -eq 1 ]
+#This only happens if the user did not enter a "*" in their initial argument 
 do
 	echo "Please enter more characters to be compared"
 	read input

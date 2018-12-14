@@ -40,6 +40,7 @@ do
 		subDirList=$(ls $1/$files)
 		subDirListCont=$(ls $1/$files/$subDirList | wc -w)
 		if (( $subDirListCont < 1 ))
+		#Again, this IF statement is used to check if the number of files in a directory is less than 1 (AKA. 0)
 		then
 			echo "That subdirectory has no content so the program will just ignore it"
 			continue

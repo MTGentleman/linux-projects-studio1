@@ -12,6 +12,7 @@ then
 	exit
 fi
 if [ -d $1 ]
+#This checks if the directory exists
 then
 	files=$(ls $1)
 else

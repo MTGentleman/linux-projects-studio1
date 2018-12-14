@@ -8,6 +8,7 @@ then
 	exit
 fi
 if [ -d $3 ]
+#This makes sure that the file actrually exists in the first place
 then
 	echo " "
 else

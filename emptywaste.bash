@@ -13,6 +13,7 @@ else
 fi
 contents=$(ls ~/.waste | wc -w)
 if [ $contents = 0 ]
+#This just checks if the .waste directory is empty
 then
 	echo "Sorry, your directory is empty and the program cannot continue"
 	exit

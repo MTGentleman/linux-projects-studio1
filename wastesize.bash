@@ -3,6 +3,7 @@
 #author - Matthew Austwick, 2018
 dir=~/.waste
 if [ -d $dir ]
+#These two lines above make sure that the .waste directory exists in the first place
 then
 	echo " "
 else
