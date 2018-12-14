@@ -5,6 +5,7 @@ test=1
 if [ $# -lt 1 ] #This if statement merely checks to see if the user hasn't entered anything
 then
 	echo "Sorry, but this command can only have 1 or more  initial arguments. Please run the command again with 1 or more arguments"
+	echo "This program processes text entered; ergo, it needs one or more stringed arguments. Please try again"
 	exit
 fi
 text="$1" # This first saves the user's input into a variable which is used to compare and store other entered text

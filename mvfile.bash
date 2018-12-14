@@ -21,19 +21,41 @@ then
 		exit
 	fi
 else
-	echo "$1 is not a valid directory. Please try again" #This occurs ONLY if the user's first directory does not exist
+	echo "$1 is not a valid directory. Please try again"
+	exit
+	 #This occurs ONLY if the user's first directory does not exist
 fi
 if [ -d $2 ] #Similar to the code above, this just makes sure that the user's second argument (directory) actually exists; if it doesn't, then the program displays a message and exits.
 then
 	echo "Your directory $2 is valid, the code will continue"
 else
 	echo "$2 is not a valid directory. Please try again"
+	exit
 fi
 dirList=$(ls $1)
 for files in $dirList #This repeats the below section code as many times as there are files/directories in the first argument (first directory)
 do
 	if [ -d $1/$files ] #If the located file is a directory, then it is not used and the program ignores it
 	then
+		subDirList=$(ls $1/$files)
+		subDirListCont=$(ls $1/$files/$subDirList | wc -w)
+		if (( $subDirListCont < 1 ))
+		then
+			echo "That subdirectory has no content so the program will just ignore it"
+			continue
+		fi
+		for file in $subDirList
+		do
+			if [ -e $1/$files/$subDirList/$file ]
+			then
+				mv $1/$files/$file $2
+				echo "$1/$files/$file has been moved to $2"
+			else
+				echo " "
+			fi
+			#This if statement and for loop just factor in the fact that there might be files inside of other folders; this command only copies SUBdirectories' files and doesn't go any deeper.
+			#It also does not factor in any other subdirectories as well.
+		done
 		echo "This is a sub-directory; all files within shall also be moved but the directory stays where it is"
 		mv $1/$files/* $2
 	elif [ -e $1/$files ] #This makes sure that the remaining file actually exists and is valid; if it is, then it gets moved to the 2nd specified directory.
@@ -49,4 +71,5 @@ ls $1
 echo " "
 echo "The contents of $2 is now" 
 ls $2
+#This section just displays the new contents of the file to make sure that it worked properly.
 
